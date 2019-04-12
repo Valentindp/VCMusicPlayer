@@ -6,7 +6,7 @@ import android.provider.MediaStore
 import com.example.valentin.valentinmusicplayer.models.Album
 import java.util.ArrayList
 
-class AlbumLoader {
+object AlbumLoader {
 
     fun getAlbum(cursor: Cursor?): Album {
         var album = Album()
