@@ -44,14 +44,5 @@
                 android:textColor="@color/dark_grey"
                 android:textSize="@dimen/article_subheading" />
 
-        <Button
-                android:id="@+id/action_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/album_card_atrist_name"
-                style="?android:attr/borderlessButtonStyle"
-                android:textColor="?attr/colorPrimary"
-                android:text="Action" />
-
     </RelativeLayout>
 </android.support.v7.widget.CardView>
