@@ -44,15 +44,15 @@ object AlbumLoader {
         return arrayList
     }
 
-    fun getAllAlbums(context: Context) = getAlbumsForCursor(makeAlbumCursor(context, null, null))
+    fun getAllAlbums(context: Context?) = getAlbumsForCursor(makeAlbumCursor(context, null, null))
 
     fun getAlbum(context: Context, id: Long) = getAlbum(makeAlbumCursor(context, "_id=?", arrayOf(id.toString())))
 
     fun getAlbums(context: Context, paramString: String) =
         getAlbumsForCursor(makeAlbumCursor(context, "album LIKE ?", arrayOf("$paramString%")))
 
-    fun makeAlbumCursor(context: Context, selection: String?, paramArrayOfString: Array<String>?) =
-        context.contentResolver.query(
+    fun makeAlbumCursor(context: Context?, selection: String?, paramArrayOfString: Array<String>?) =
+        context?.contentResolver?.query(
             MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI,
             arrayOf("_id", "album", "artist", "artist_id", "numsongs", "minyear"),
             selection,

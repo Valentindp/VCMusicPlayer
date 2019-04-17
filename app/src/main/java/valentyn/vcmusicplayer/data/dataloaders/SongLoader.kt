@@ -55,11 +55,10 @@ object SongLoader {
         val len = cursor.count
         val list = LongArray(len)
         cursor.moveToFirst()
-        var columnIndex = -1
-        try {
-            columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Audio.Playlists.Members.AUDIO_ID)
+        val columnIndex = try {
+            cursor.getColumnIndexOrThrow(MediaStore.Audio.Playlists.Members.AUDIO_ID)
         } catch (notaplaylist: IllegalArgumentException) {
-            columnIndex = cursor.getColumnIndexOrThrow(BaseColumns._ID)
+            cursor.getColumnIndexOrThrow(BaseColumns._ID)
         }
 
         for (i in 0 until len) {
