@@ -8,4 +8,5 @@ object PlayerUtils {
     fun getAlbumArtUri(albumId: Long) =
         ContentUris.withAppendedId(Uri.parse("content://media/external/audio/albumart"), albumId)
 
+
 }

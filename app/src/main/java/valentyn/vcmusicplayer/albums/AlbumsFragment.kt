@@ -9,6 +9,11 @@ import android.view.ViewGroup
 import com.example.valentin.valentinmusicplayer.data.dataloaders.AlbumLoader
 import kotlinx.android.synthetic.main.fragment_album.*
 import valentyn.vcmusicplayer.R
+import android.support.v4.app.ActivityCompat
+import android.content.pm.PackageManager
+import android.support.v4.content.ContextCompat
+import valentyn.vcmusicplayer.utils.PlayerUtils
+
 
 class AlbumsFragment : Fragment() {
 

@@ -8,7 +8,7 @@ import java.util.ArrayList
 
 object AlbumLoader {
 
-    fun getAlbum(cursor: Cursor?): Album {
+    private fun getAlbum(cursor: Cursor?): Album {
         var album = Album()
         if (cursor != null) {
             if (cursor.moveToFirst())
@@ -25,7 +25,7 @@ object AlbumLoader {
         return album
     }
 
-    fun getAlbumsForCursor(cursor: Cursor?): MutableList<Album> {
+    private fun getAlbumsForCursor(cursor: Cursor?): MutableList<Album> {
         val arrayList = ArrayList<Album>()
         if (cursor != null && cursor.moveToFirst())
             do {
@@ -51,7 +51,7 @@ object AlbumLoader {
     fun getAlbums(context: Context, paramString: String) =
         getAlbumsForCursor(makeAlbumCursor(context, "album LIKE ?", arrayOf("$paramString%")))
 
-    fun makeAlbumCursor(context: Context?, selection: String?, paramArrayOfString: Array<String>?) =
+    private fun makeAlbumCursor(context: Context?, selection: String?, paramArrayOfString: Array<String>?) =
         context?.contentResolver?.query(
             MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI,
             arrayOf("_id", "album", "artist", "artist_id", "numsongs", "minyear"),
