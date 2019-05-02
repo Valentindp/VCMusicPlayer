@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="md_keylines">16dp</dimen>
-    <dimen name="card_height">300dp</dimen>
-    <dimen name="card_image_height">200dp</dimen>
-    <dimen name="card_title_height">40dp</dimen>
-    <dimen name="article_subheading">16sp</dimen>
-    <dimen name="article_heading">20sp</dimen>
+    <dimen name="cardViewMargin">16dp</dimen>
+    <dimen name="cardViewHeight">250dp</dimen>
+    <dimen name="cardViewImageHeight">150dp</dimen>
+    <dimen name="cardViewTitleHeight">40dp</dimen>
+    <dimen name="subheadTextSize">14sp</dimen>
+    <dimen name="headTextSize">16sp</dimen>
+    <dimen name="cardViewTextMargin">16dp</dimen>
 </resources>

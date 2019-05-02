@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">V.C Music Player</string>
-    <string name="album_content_description">Album image view</string>
+    <string name="albumContentDescription">Album image view</string>
 </resources>

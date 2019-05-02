@@ -2,12 +2,12 @@ package valentyn.vcmusicplayer.mainview
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import valentyn.vcmusicplayer.R
-import android.support.v4.app.ActivityCompat
+import androidx.core.app.ActivityCompat
 
 
 class MainActivity : AppCompatActivity() {

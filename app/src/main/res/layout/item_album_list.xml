@@ -1,57 +1,64 @@
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                                    xmlns:tools="http://schemas.android.com/tools"
-                                    android:id="@+id/album_card_view"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="@dimen/card_height"
-                                    android:layout_marginBottom="@dimen/md_keylines"
-                                    android:layout_marginLeft="@dimen/md_keylines"
-                                    android:layout_marginRight="@dimen/md_keylines"
-                                    android:foreground="?attr/selectableItemBackground"
-                                    android:layout_marginTop="@dimen/md_keylines"
-                                    app:cardCornerRadius="10dp"
-                                    app:cardElevation="5dp">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
+            android:id="@+id/album_card_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="@dimen/cardViewHeight"
+            app:cardCornerRadius="4dp"
+            android:layout_marginTop="@dimen/cardViewMargin"
+            android:layout_marginStart="@dimen/cardViewMargin"
+            android:layout_marginEnd="@dimen/cardViewMargin">
 
-        <ImageView
-                android:id="@+id/album_card_image"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/card_image_height"
-                android:scaleType="fitCenter"
-                android:contentDescription="@string/album_content_description"
-                app:srcCompat="@drawable/album_24dp"
-        />
-
-        <TextView
-                android:id="@+id/album_card_title"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/card_title_height"
-                android:layout_marginLeft="@dimen/md_keylines"
-                android:layout_marginRight="@dimen/md_keylines"
-                tools:text="Album title"
-                android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColor="@color/cardview_text_blue"
-                android:layout_marginTop="10dp"
-                android:textSize="@dimen/article_heading"
-                android:layout_below="@+id/album_card_image"/>
-
-        <TextView
-                android:id="@+id/album_card_atrist_name"
+        <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/md_keylines"
-                android:layout_marginBottom="@dimen/md_keylines"
-                android:layout_marginRight="@dimen/md_keylines"
-                tools:text="Artist name"
-                android:ellipsize="end"
-                android:singleLine="true"
-                android:textColor="@color/dark_grey"
-                android:textSize="@dimen/article_subheading"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/album_card_title"/>
+                android:orientation="vertical">
 
-    </RelativeLayout>
-</android.support.v7.widget.CardView>
+            <ImageView
+                    android:id="@+id/album_card_image"
+                    android:layout_width="match_parent"
+                    android:elevation="1dp"
+                    android:layout_height="@dimen/cardViewImageHeight"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="@string/albumContentDescription"
+                    app:srcCompat="@drawable/album_24dp"
+            />
+
+            <TextView
+                    android:id="@+id/album_card_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/cardViewTextMargin"
+                    android:layout_marginRight="@dimen/cardViewTextMargin"
+                    tools:text="Album title"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/cardViewTextBlue"
+                    android:layout_marginTop="10dp"
+                    android:textSize="@dimen/headTextSize"
+                    android:layout_below="@+id/album_card_image"
+            />
+
+            <TextView
+                    android:id="@+id/album_card_atrist_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/cardViewTextMargin"
+                    android:layout_marginBottom="@dimen/cardViewTextMargin"
+                    android:layout_marginRight="@dimen/cardViewTextMargin"
+                    tools:text="Artist name"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="@dimen/subheadTextSize"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/album_card_title"
+            />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
