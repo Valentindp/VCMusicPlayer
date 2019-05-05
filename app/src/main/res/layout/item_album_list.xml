@@ -8,11 +8,9 @@
     <androidx.cardview.widget.CardView
             android:id="@+id/album_card_view"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cardViewHeight"
-            app:cardCornerRadius="4dp"
-            android:layout_marginTop="@dimen/cardViewMargin"
-            android:layout_marginStart="@dimen/cardViewMargin"
-            android:layout_marginEnd="@dimen/cardViewMargin">
+            android:layout_height="wrap_content"
+            app:cardElevation="3dp"
+            app:cardCornerRadius="10dp">
 
         <RelativeLayout
                 android:layout_width="match_parent"
@@ -22,11 +20,10 @@
             <ImageView
                     android:id="@+id/album_card_image"
                     android:layout_width="match_parent"
-                    android:elevation="1dp"
                     android:layout_height="@dimen/cardViewImageHeight"
                     android:scaleType="fitCenter"
                     android:contentDescription="@string/albumContentDescription"
-                    app:srcCompat="@drawable/album_24dp"
+                    app:srcCompat="@drawable/ic_album_blue_24dp"
             />
 
             <TextView
@@ -37,9 +34,11 @@
                     android:layout_marginRight="@dimen/cardViewTextMargin"
                     tools:text="Album title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="@color/cardViewTextBlue"
+                    android:textColor="@color/colorPrimary"
                     android:layout_marginTop="10dp"
                     android:textSize="@dimen/headTextSize"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:layout_below="@+id/album_card_image"
             />
 
@@ -51,10 +50,10 @@
                     android:layout_marginBottom="@dimen/cardViewTextMargin"
                     android:layout_marginRight="@dimen/cardViewTextMargin"
                     tools:text="Artist name"
-                    android:ellipsize="end"
-                    android:singleLine="true"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/subheadTextSize"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:layout_marginTop="10dp"
                     android:layout_below="@+id/album_card_title"
             />

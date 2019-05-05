@@ -1,4 +1,4 @@
-package com.example.valentin.valentinmusicplayer.data.dataloaders
+package valentyn.vcmusicplayer.data.dataloaders
 
 import android.content.Context
 import android.database.Cursor
@@ -10,7 +10,7 @@ object AlbumLoader {
 
     private fun getAlbum(cursor: Cursor?): Album {
         var album = Album()
-        if (cursor != null) {
+        cursor?.let {
             if (cursor.moveToFirst())
                 album = Album(
                     cursor.getLong(0),
@@ -20,27 +20,30 @@ object AlbumLoader {
                     cursor.getInt(4),
                     cursor.getInt(5)
                 )
+            cursor.close()
         }
-        cursor?.close()
         return album
     }
 
     private fun getAlbumsForCursor(cursor: Cursor?): MutableList<Album> {
         val arrayList = ArrayList<Album>()
-        if (cursor != null && cursor.moveToFirst())
-            do {
-                arrayList.add(
-                    Album(
-                        cursor.getLong(0),
-                        cursor.getString(1),
-                        cursor.getString(2),
-                        cursor.getLong(3),
-                        cursor.getInt(4),
-                        cursor.getInt(5)
+        cursor?.let {
+            if (cursor.moveToFirst())
+                do {
+                    arrayList.add(
+                        Album(
+                            cursor.getLong(0),
+                            cursor.getString(1),
+                            cursor.getString(2),
+                            cursor.getLong(3),
+                            cursor.getInt(4),
+                            cursor.getInt(5)
+                        )
                     )
-                )
-            } while (cursor.moveToNext())
-        cursor?.close()
+                } while (cursor.moveToNext())
+            cursor.close()
+        }
+
         return arrayList
     }
 

@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-
+<resources>
+    <item name="spaces_item_decoration" format="integer" type="dimen">20</item>
 </resources>

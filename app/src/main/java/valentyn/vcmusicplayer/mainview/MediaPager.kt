@@ -6,13 +6,13 @@ import androidx.fragment.app.FragmentPagerAdapter
 import valentyn.vcmusicplayer.albums.AlbumsFragment
 
 class MediaPager internal constructor(
-    fm: androidx.fragment.app.FragmentManager
+    fm: FragmentManager
 ) : androidx.fragment.app.FragmentPagerAdapter(fm) {
 
     private val count = 1
 
-    override fun getItem(position: Int): androidx.fragment.app.Fragment? {
-        var fragment: androidx.fragment.app.Fragment? = null
+    override fun getItem(position: Int): Fragment? {
+        var fragment: Fragment? = null
         when (position) {
             0 -> fragment = AlbumsFragment()
         }

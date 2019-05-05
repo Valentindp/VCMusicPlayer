@@ -15,8 +15,29 @@ object SongLoader {
 
     fun getSongsForCursor(cursor: Cursor?): ArrayList<Song> {
         val arrayList = ArrayList<Song>()
-        if (cursor != null && cursor.moveToFirst())
-            do {
+        cursor?.let {
+            if (cursor.moveToFirst())
+                do {
+                    val id = cursor.getLong(0)
+                    val title = cursor.getString(1)
+                    val artist = cursor.getString(2)
+                    val album = cursor.getString(3)
+                    val duration = cursor.getInt(4)
+                    val trackNumber = cursor.getInt(5)
+                    val artistId = cursor.getInt(6).toLong()
+                    val albumId = cursor.getLong(7)
+
+                    arrayList.add(Song(id, albumId, artistId, title, artist, album, duration, trackNumber))
+                } while (cursor.moveToNext())
+            cursor.close()
+        }
+        return arrayList
+    }
+
+    fun getSongForCursor(cursor: Cursor?): Song {
+        var song = Song()
+        cursor?.let {
+            if (cursor.moveToFirst()) {
                 val id = cursor.getLong(0)
                 val title = cursor.getString(1)
                 val artist = cursor.getString(2)
@@ -26,27 +47,10 @@ object SongLoader {
                 val artistId = cursor.getInt(6).toLong()
                 val albumId = cursor.getLong(7)
 
-                arrayList.add(Song(id, albumId, artistId, title, artist, album, duration, trackNumber))
-            } while (cursor.moveToNext())
-        cursor?.close()
-        return arrayList
-    }
-
-    fun getSongForCursor(cursor: Cursor?): Song {
-        var song = Song()
-        if (cursor != null && cursor.moveToFirst()) {
-            val id = cursor.getLong(0)
-            val title = cursor.getString(1)
-            val artist = cursor.getString(2)
-            val album = cursor.getString(3)
-            val duration = cursor.getInt(4)
-            val trackNumber = cursor.getInt(5)
-            val artistId = cursor.getInt(6).toLong()
-            val albumId = cursor.getLong(7)
-
-            song = Song(id, albumId, artistId, title, artist, album, duration, trackNumber)
+                song = Song(id, albumId, artistId, title, artist, album, duration, trackNumber)
+            }
+            cursor.close()
         }
-        cursor?.close()
         return song
     }
 
@@ -79,13 +83,14 @@ object SongLoader {
         val sortOrder = MediaStore.Audio.Media.TITLE + " ASC"
 
         val cursor = cr.query(uri, projection, "$selection=?", selectionArgs, sortOrder)
-
-        if (cursor != null && cursor.count > 0) {
-            val song = getSongForCursor(cursor)
-            cursor.close()
-            return song
-        } else
-            return Song()
+        var song = Song()
+        cursor?.let {
+            if (cursor.count > 0) {
+                song = getSongForCursor(cursor)
+                cursor.close()
+            }
+        }
+        return song
     }
 
     fun getAllSongs(context: Context) = getSongsForCursor(makeSongCursor(context, null, null))
@@ -125,7 +130,6 @@ object SongLoader {
             paramArrayOfString,
             sortOrder
         )
-
     }
 
     fun songFromFile(filePath: String): Song {

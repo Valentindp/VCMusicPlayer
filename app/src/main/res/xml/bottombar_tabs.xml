@@ -1,0 +1,17 @@
+<tabs>
+    <tab
+            id="@+id/songs_tab"
+            icon="@drawable/ic_music_note_black_24dp"
+            title="@string/tab_song_title"
+    />
+    <tab
+            id="@+id/albums_tab"
+            icon="@drawable/ic_album_black_24dp"
+            title="@string/tab_album_title"
+    />
+    <tab
+            id="@+id/artists_tab"
+            icon="@drawable/ic_artist_black_24dp"
+            title="@string/tab_artist_title"
+    />
+</tabs>

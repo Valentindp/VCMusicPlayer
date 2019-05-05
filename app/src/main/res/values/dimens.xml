@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="cardViewMargin">16dp</dimen>
-    <dimen name="cardViewHeight">250dp</dimen>
-    <dimen name="cardViewImageHeight">150dp</dimen>
+    <dimen name="cardViewHeight">240dp</dimen>
+    <dimen name="cardViewImageHeight">140dp</dimen>
     <dimen name="cardViewTitleHeight">40dp</dimen>
-    <dimen name="subheadTextSize">14sp</dimen>
-    <dimen name="headTextSize">16sp</dimen>
+    <dimen name="subheadTextSize">12sp</dimen>
+    <dimen name="headTextSize">14sp</dimen>
     <dimen name="cardViewTextMargin">16dp</dimen>
 </resources>

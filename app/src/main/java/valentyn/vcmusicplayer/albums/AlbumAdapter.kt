@@ -33,6 +33,7 @@ class AlbumAdapter(var list: List<Album>) : RecyclerView.Adapter<AlbumAdapter.It
             Picasso.get()
                 .load(PlayerUtils.getAlbumArtUri(item.id))
                 .fit()
+                .error(R.drawable.ic_album_blue_24dp)
                 .into(view.album_card_image)
 
             view.apply {
