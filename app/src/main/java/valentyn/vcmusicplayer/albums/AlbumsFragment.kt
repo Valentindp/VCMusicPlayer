@@ -9,12 +9,11 @@ import kotlinx.android.synthetic.main.fragment_album.*
 import valentyn.vcmusicplayer.R
 import androidx.recyclerview.widget.GridLayoutManager
 import valentyn.vcmusicplayer.data.dataloaders.AlbumLoader
+import valentyn.vcmusicplayer.utils.SpacesItemDecoration
 
 class AlbumsFragment : Fragment() {
 
     private val albumAdapter: AlbumAdapter = AlbumAdapter(ArrayList())
-    private val spanCount = 2
-    private val spaceItemDecoration = 20
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_album, container, false)
@@ -24,11 +23,10 @@ class AlbumsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         album_recyclerView.apply {
             setHasFixedSize(true)
-            layoutManager = GridLayoutManager(activity, spanCount)
+            layoutManager = GridLayoutManager(activity, R.integer.spanCountRV)
             adapter = albumAdapter
-            addItemDecoration(SpacesItemDecoration(spaceItemDecoration, spanCount))
+            addItemDecoration(SpacesItemDecoration(R.integer.spaceItemDecorationRV, R.integer.spanCountRV))
         }
-
         albumAdapter.updateDataSet(AlbumLoader.getAllAlbums(context))
     }
 }

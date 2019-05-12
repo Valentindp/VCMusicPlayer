@@ -4,4 +4,5 @@
     <string name="tab_album_title">Albums</string>
     <string name="tab_song_title">Songs</string>
     <string name="tab_artist_title">Artists</string>
+    <string name="artist_songs_count">Albums %1$i | Songs %2$i </string>
 </resources>

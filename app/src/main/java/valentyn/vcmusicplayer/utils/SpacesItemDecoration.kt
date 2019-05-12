@@ -1,4 +1,4 @@
-package valentyn.vcmusicplayer.albums
+package valentyn.vcmusicplayer.utils
 
 import android.graphics.Rect
 import android.view.View

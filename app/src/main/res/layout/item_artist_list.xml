@@ -6,7 +6,7 @@
               android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-            android:id="@+id/album_card_view"
+            android:id="@+id/artist_card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardElevation="3dp"
@@ -23,7 +23,7 @@
                     android:layout_height="@dimen/cardViewImageHeight"
                     android:scaleType="fitCenter"
                     android:contentDescription="@string/albumContentDescription"
-                    app:srcCompat="@drawable/ic_album_blue_24dp"
+                    app:srcCompat="@drawable/ic_artist_blue_24dp"
             />
 
             <TextView
@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/cardViewTextMargin"
                     android:layout_marginRight="@dimen/cardViewTextMargin"
-                    tools:text="Album title"
+                    tools:text="Artist title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@color/colorPrimary"
                     android:layout_marginTop="10dp"
@@ -49,7 +49,7 @@
                     android:layout_marginLeft="@dimen/cardViewTextMargin"
                     android:layout_marginBottom="@dimen/cardViewTextMargin"
                     android:layout_marginRight="@dimen/cardViewTextMargin"
-                    tools:text="Artist name"
+                    tools:text="Artist songs count"
                     android:textColor="@color/dark_grey"
                     android:textSize="@dimen/subheadTextSize"
                     android:ellipsize="end"
