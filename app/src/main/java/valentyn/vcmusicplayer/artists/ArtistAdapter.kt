@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_album_list.view.*
+import kotlinx.android.synthetic.main.item_artist_list.view.*
 import valentyn.vcmusicplayer.R
 import valentyn.vcmusicplayer.models.Artist
 import valentyn.vcmusicplayer.utils.PlayerUtils
@@ -14,7 +14,7 @@ class ArtistAdapter(var list: List<Artist>) : RecyclerView.Adapter<ArtistAdapter
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ItemHolder(
         LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_album_list, parent, false)
+            .inflate(R.layout.item_artist_list, parent, false)
     )
 
     override fun getItemCount() = list.size

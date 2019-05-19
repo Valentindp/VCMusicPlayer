@@ -34,11 +34,11 @@ class AlbumAdapter(var list: List<Album>) : RecyclerView.Adapter<AlbumAdapter.It
                 .load(PlayerUtils.getAlbumArtUri(item.id))
                 .fit()
                 .error(R.drawable.ic_album_blue_24dp)
-                .into(view.artist_card_image)
+                .into(view.album_card_image)
 
             view.apply {
-                artist_card_title.text = item.title
-                artist_songs_count.text = item.artistName
+                album_card_title.text = item.title
+                album_artist_name.text = item.artistName
             }
 
         }

@@ -13,20 +13,25 @@ import valentyn.vcmusicplayer.utils.SpacesItemDecoration
 
 class ArtistsFragment : Fragment() {
 
-    private val albumAdapter: ArtistAdapter = ArtistAdapter(ArrayList())
+    private val artistAdapter: ArtistAdapter = ArtistAdapter(ArrayList())
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_album, container, false)
+        return inflater.inflate(R.layout.fragment_artist, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         artist_recyclerView.apply {
             setHasFixedSize(true)
-            layoutManager = GridLayoutManager(activity, R.integer.spanCountRV)
-            adapter = albumAdapter
-            addItemDecoration(SpacesItemDecoration(R.integer.spaceItemDecorationRV, R.integer.spanCountRV))
+            layoutManager = GridLayoutManager(activity, resources.getInteger(R.integer.spanCountRV))
+            adapter = artistAdapter
+            addItemDecoration(
+                SpacesItemDecoration(
+                    resources.getInteger(R.integer.spaceItemDecorationRV),
+                    resources.getInteger(R.integer.spanCountRV)
+                )
+            )
         }
-        albumAdapter.updateDataSet(ArtistLoader.getAllArtists(context))
+        artistAdapter.updateDataSet(ArtistLoader.getAllArtists(context))
     }
 }

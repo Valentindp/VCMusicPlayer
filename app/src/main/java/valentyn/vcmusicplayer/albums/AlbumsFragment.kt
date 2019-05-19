@@ -23,9 +23,14 @@ class AlbumsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         album_recyclerView.apply {
             setHasFixedSize(true)
-            layoutManager = GridLayoutManager(activity, R.integer.spanCountRV)
+            layoutManager = GridLayoutManager(activity, resources.getInteger(R.integer.spanCountRV))
             adapter = albumAdapter
-            addItemDecoration(SpacesItemDecoration(R.integer.spaceItemDecorationRV, R.integer.spanCountRV))
+            addItemDecoration(
+                SpacesItemDecoration(
+                    resources.getInteger(R.integer.spaceItemDecorationRV),
+                    resources.getInteger(R.integer.spanCountRV)
+                )
+            )
         }
         albumAdapter.updateDataSet(AlbumLoader.getAllAlbums(context))
     }

@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">V.C Music Player</string>
     <string name="albumContentDescription">Album image view</string>
+    <string name="artistContentDescription">Artist image view</string>
+    <string name="songContentDescription">Song image view</string>
     <string name="tab_album_title">Albums</string>
     <string name="tab_song_title">Songs</string>
     <string name="tab_artist_title">Artists</string>
-    <string name="artist_songs_count">Albums %1$i | Songs %2$i </string>
+    <string name="artist_songs_count">Albums %1$d | Songs %2$d </string>
 </resources>
