@@ -2,9 +2,9 @@ package valentyn.vcmusicplayer.mainview
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
 import valentyn.vcmusicplayer.albums.AlbumsFragment
 import valentyn.vcmusicplayer.artists.ArtistsFragment
+import valentyn.vcmusicplayer.songs.SongsFragment
 
 class MediaPager internal constructor(
     fm: FragmentManager
@@ -17,6 +17,7 @@ class MediaPager internal constructor(
         when (position) {
             0 -> fragment = AlbumsFragment()
             1 -> fragment = ArtistsFragment()
+            2 -> fragment = SongsFragment()
         }
         return fragment
     }

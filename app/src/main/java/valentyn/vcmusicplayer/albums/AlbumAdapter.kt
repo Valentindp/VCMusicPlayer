@@ -11,6 +11,7 @@ import valentyn.vcmusicplayer.R
 import valentyn.vcmusicplayer.utils.PlayerUtils
 
 class AlbumAdapter(var list: List<Album>) : RecyclerView.Adapter<AlbumAdapter.ItemHolder>() {
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ItemHolder(
         LayoutInflater.from(parent.context)
             .inflate(R.layout.item_album_list, parent, false)

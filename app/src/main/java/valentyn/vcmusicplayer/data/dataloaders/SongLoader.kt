@@ -93,7 +93,7 @@ object SongLoader {
         return song
     }
 
-    fun getAllSongs(context: Context) = getSongsForCursor(makeSongCursor(context, null, null))
+    fun getAllSongs(context: Context?) = getSongsForCursor(makeSongCursor(context, null, null))
 
     fun getSongListInFolder(context: Context, path: String) =
         getSongListForCursor(makeSongCursor(context, MediaStore.Audio.Media.DATA + " LIKE ?", arrayOf("$path%"), null))
@@ -108,11 +108,11 @@ object SongLoader {
         return if (result.size < limit) result else result.subList(0, limit)
     }
 
-    fun makeSongCursor(context: Context, selection: String?, paramArrayOfString: Array<String>?) =
+    fun makeSongCursor(context: Context?, selection: String?, paramArrayOfString: Array<String>?) =
         makeSongCursor(context, selection, paramArrayOfString, MediaStore.Audio.Media.DEFAULT_SORT_ORDER)
 
     private fun makeSongCursor(
-        context: Context,
+        context: Context?,
         selection: String?,
         paramArrayOfString: Array<String>?,
         sortOrder: String?
@@ -123,7 +123,7 @@ object SongLoader {
         if (!TextUtils.isEmpty(selection)) {
             selectionStatement = "$selectionStatement AND $selection"
         }
-        return context.contentResolver.query(
+        return context?.contentResolver?.query(
             MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
             arrayOf("_id", "title", "artist", "album", "duration", "track", "artist_id", "album_id"),
             selectionStatement,
