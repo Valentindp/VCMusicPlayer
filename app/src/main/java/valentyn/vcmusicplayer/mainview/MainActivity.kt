@@ -8,7 +8,7 @@ import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import valentyn.vcmusicplayer.R
 import androidx.core.app.ActivityCompat
-
+import androidx.viewpager.widget.ViewPager
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +18,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        media_pager.adapter = MediaPager(supportFragmentManager)
+        media_pager.apply {
+            adapter = MediaPager(supportFragmentManager)
+            addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+                override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
+                override fun onPageSelected(position: Int) {
+                    bottomBar.selectTabAtPosition(position, true)
+                }
+                override fun onPageScrollStateChanged(state: Int) {}
+            })
+        }
 
         bottomBar.setOnTabSelectListener { tabId ->
             when (tabId) {
@@ -27,12 +36,17 @@ class MainActivity : AppCompatActivity() {
                 R.id.artists_tab -> media_pager.currentItem = 2
             }
         }
+
     }
 
     override fun onStart() {
         super.onStart()
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
             ActivityCompat.requestPermissions(
                 this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
                 REQUEST_CODE_PERMISSION_READ_EXTERNAL_STORAGE
