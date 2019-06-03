@@ -19,6 +19,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         media_pager.adapter = MediaPager(supportFragmentManager)
+
+        bottomBar.setOnTabSelectListener { tabId ->
+            when (tabId) {
+                R.id.songs_tab -> media_pager.currentItem = 0
+                R.id.albums_tab -> media_pager.currentItem = 1
+                R.id.artists_tab -> media_pager.currentItem = 2
+            }
+        }
     }
 
     override fun onStart() {

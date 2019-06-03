@@ -10,14 +10,14 @@ class MediaPager internal constructor(
     fm: FragmentManager
 ) : androidx.fragment.app.FragmentPagerAdapter(fm) {
 
-    private val count = 2
+    private val count = 3
 
     override fun getItem(position: Int): Fragment? {
         var fragment: Fragment? = null
         when (position) {
-            0 -> fragment = AlbumsFragment()
-            1 -> fragment = ArtistsFragment()
-            2 -> fragment = SongsFragment()
+            0 -> fragment = SongsFragment()
+            1 -> fragment = AlbumsFragment()
+            2 -> fragment = ArtistsFragment()
         }
         return fragment
     }

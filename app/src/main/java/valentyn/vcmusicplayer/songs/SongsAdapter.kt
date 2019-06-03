@@ -12,7 +12,7 @@ import valentyn.vcmusicplayer.utils.PlayerUtils
 
 class SongsAdapter(var list: List<Song>) : RecyclerView.Adapter<SongsAdapter.ItemHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = SongsAdapter.ItemHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ItemHolder(
         LayoutInflater.from(parent.context)
             .inflate(R.layout.item_song_list, parent, false)
     )
@@ -23,7 +23,7 @@ class SongsAdapter(var list: List<Song>) : RecyclerView.Adapter<SongsAdapter.Ite
         list = arraylist
     }
 
-    override fun onBindViewHolder(holder: SongsAdapter.ItemHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemHolder, position: Int) {
         holder.bindData(list[position])
     }
 
@@ -33,7 +33,7 @@ class SongsAdapter(var list: List<Song>) : RecyclerView.Adapter<SongsAdapter.Ite
         fun bindData(item: Song) {
 
             Picasso.get()
-                .load(PlayerUtils.getAlbumArtUri(item.id))
+                .load(PlayerUtils.getAlbumArtUri(item.albumId))
                 .fit()
                 .error(R.drawable.ic_music_note_blue_24dp)
                 .into(view.song_card_image)
@@ -42,8 +42,6 @@ class SongsAdapter(var list: List<Song>) : RecyclerView.Adapter<SongsAdapter.Ite
                 song_title.text = item.title
                 song_artist.text = item.artistName
             }
-
         }
     }
-
 }
