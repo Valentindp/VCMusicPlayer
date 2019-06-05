@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="cardViewMargin">16dp</dimen>
+    <dimen name="cardViewMargin">5dp</dimen>
     <dimen name="cardViewHeight">240dp</dimen>
     <dimen name="cardViewImageHeight">140dp</dimen>
     <dimen name="cardViewTitleHeight">40dp</dimen>
     <dimen name="subheadTextSize">12sp</dimen>
     <dimen name="headTextSize">14sp</dimen>
     <dimen name="cardViewTextMargin">16dp</dimen>
+    <dimen name="cardViewElevation">3dp</dimen>
+    <dimen name="cardViewCornerRadius">10dp</dimen>
 </resources>

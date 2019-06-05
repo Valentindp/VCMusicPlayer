@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_artist.*
 import valentyn.vcmusicplayer.R
 import valentyn.vcmusicplayer.data.dataloaders.ArtistLoader
-import valentyn.vcmusicplayer.utils.SpacesItemDecoration
+import valentyn.vcmusicplayer.utils.CardViewItemDecoration
 
 class ArtistsFragment : Fragment() {
 
@@ -26,7 +26,7 @@ class ArtistsFragment : Fragment() {
             layoutManager = GridLayoutManager(activity, resources.getInteger(R.integer.spanCountRV))
             adapter = artistAdapter
             addItemDecoration(
-                SpacesItemDecoration(
+                CardViewItemDecoration(
                     resources.getInteger(R.integer.spaceItemDecorationRV),
                     resources.getInteger(R.integer.spanCountRV)
                 )

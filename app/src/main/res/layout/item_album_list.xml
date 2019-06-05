@@ -10,8 +10,9 @@
             style="@style/Widget.MaterialComponents.CardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardElevation="3dp"
-            app:cardCornerRadius="10dp">
+            android:layout_margin="@dimen/cardViewMargin"
+            app:cardElevation="@dimen/cardViewElevation"
+            app:cardCornerRadius="@dimen/cardViewCornerRadius">
 
         <RelativeLayout
                 android:layout_width="match_parent"
