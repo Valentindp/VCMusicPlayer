@@ -1,64 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:orientation="horizontal">
 
     <androidx.cardview.widget.CardView
-            android:id="@+id/artist_card_view"
+            android:id="@+id/album_card_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/cardViewMargin"
             app:cardElevation="@dimen/cardViewElevation"
             app:cardCornerRadius="@dimen/cardViewCornerRadius">
 
-        <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
             <ImageView
-                    android:id="@+id/artist_card_image"
+                    android:id="@+id/song_card_image"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/cardViewImageHeight"
                     android:scaleType="fitCenter"
-                    android:contentDescription="@string/artistContentDescription"
-                    app:srcCompat="@drawable/ic_artist_blue_24dp"
-            />
+                    android:contentDescription="@string/songContentDescription"
+                    android:src="@drawable/ic_music_note_blue_24dp"/>
 
             <TextView
-                    android:id="@+id/artist_card_title"
+                    android:id="@+id/song_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/cardViewTextMargin"
                     android:layout_marginRight="@dimen/cardViewTextMargin"
-                    tools:text="Artist title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                    android:textColor="@color/primaryColor"
-                    android:layout_marginTop="@dimen/cardViewTextMarginTop"
-                    android:textSize="@dimen/headTextSize"
                     android:ellipsize="end"
+                    android:textColor="@color/primaryColor"
+                    tools:text="Song title"
                     android:maxLines="1"
-                    android:layout_below="@id/artist_card_image"
-            />
+                    android:layout_marginTop="@dimen/cardViewTextMarginTop"
+                    android:singleLine="true"
+                    android:textSize="@dimen/headTextSize"
+                    android:layout_below="@id/song_card_image"/>
 
             <TextView
-                    android:id="@+id/artist_songs_count"
+                    android:id="@+id/song_artist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/cardViewTextMargin"
                     android:layout_marginBottom="@dimen/cardViewTextMargin"
                     android:layout_marginRight="@dimen/cardViewTextMargin"
-                    tools:text="Artist songs count"
-                    android:textColor="@color/primaryColor"
-                    android:textSize="@dimen/subheadTextSize"
                     android:ellipsize="end"
                     android:maxLines="1"
+                    android:textColor="@color/primaryColor"
                     android:layout_marginTop="@dimen/cardViewTextMarginTop"
-                    android:layout_below="@id/artist_card_title"
-            />
+                    tools:text="Artist"
+                    android:singleLine="true"
+                    android:textSize="@dimen/subheadTextSize"
+                    android:layout_below="@id/song_title"/>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
 </LinearLayout>

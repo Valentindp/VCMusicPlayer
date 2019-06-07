@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.valentin.valentinmusicplayer.models.Album
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_album_list.view.*
 import valentyn.vcmusicplayer.R
+import valentyn.vcmusicplayer.models.Album
 import valentyn.vcmusicplayer.utils.PlayerUtils
 
 class AlbumAdapter(var list: List<Album>) : RecyclerView.Adapter<AlbumAdapter.ItemHolder>() {

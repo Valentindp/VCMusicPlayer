@@ -1,5 +1,10 @@
 <tabs>
     <tab
+            id="@+id/allMedia_tab"
+            icon="@drawable/ic_perm_media_black_24dp"
+            title="@string/tab_allMedia_title"
+    />
+    <tab
             id="@+id/songs_tab"
             icon="@drawable/ic_music_note_black_24dp"
             title="@string/tab_song_title"

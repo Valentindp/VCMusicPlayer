@@ -31,12 +31,12 @@ class MainActivity : AppCompatActivity() {
 
         bottomBar.setOnTabSelectListener { tabId ->
             when (tabId) {
-                R.id.songs_tab -> media_pager.currentItem = 0
-                R.id.albums_tab -> media_pager.currentItem = 1
-                R.id.artists_tab -> media_pager.currentItem = 2
+                R.id.allMedia_tab -> media_pager.currentItem = 0
+                R.id.songs_tab -> media_pager.currentItem = 1
+                R.id.albums_tab -> media_pager.currentItem = 2
+                R.id.artists_tab -> media_pager.currentItem = 3
             }
         }
-
     }
 
     override fun onStart() {

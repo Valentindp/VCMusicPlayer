@@ -6,5 +6,9 @@
     <string name="tab_album_title">Albums</string>
     <string name="tab_song_title">Songs</string>
     <string name="tab_artist_title">Artists</string>
+    <string name="tab_allMedia_title">All media</string>
     <string name="artist_songs_count">Albums %1$d | Songs %2$d </string>
+    <string name="albums_count">Albums %1$d</string>
+    <string name="artists_count">Artists %1$d</string>
+    <string name="songs_count">Songs %1$d</string>
 </resources>

@@ -5,9 +5,8 @@
               android:layout_height="wrap_content"
               android:orientation="vertical">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
             android:id="@+id/album_card_view"
-            style="@style/Widget.MaterialComponents.CardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/cardViewMargin"
@@ -37,11 +36,11 @@
                     tools:text="Album title"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@color/primaryColor"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="@dimen/cardViewTextMarginTop"
                     android:textSize="@dimen/headTextSize"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:layout_below="@+id/album_card_image"
+                    android:layout_below="@id/album_card_image"
             />
 
             <TextView
@@ -56,10 +55,10 @@
                     android:textSize="@dimen/subheadTextSize"
                     android:ellipsize="end"
                     android:maxLines="1"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/album_card_title"
+                    android:layout_marginTop="@dimen/cardViewTextMarginTop"
+                    android:layout_below="@id/album_card_title"
             />
 
         </RelativeLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

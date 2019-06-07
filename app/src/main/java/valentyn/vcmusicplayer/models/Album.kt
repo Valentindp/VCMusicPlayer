@@ -1,4 +1,4 @@
-package com.example.valentin.valentinmusicplayer.models
+package valentyn.vcmusicplayer.models
 
 data class Album (
     val id: Long = -1,

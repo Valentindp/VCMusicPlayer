@@ -3,7 +3,7 @@ package valentyn.vcmusicplayer.data.dataloaders
 import android.content.Context
 import android.database.Cursor
 import android.provider.MediaStore
-import com.example.valentin.valentinmusicplayer.models.Album
+import valentyn.vcmusicplayer.models.Album
 import java.util.ArrayList
 
 object AlbumLoader {
