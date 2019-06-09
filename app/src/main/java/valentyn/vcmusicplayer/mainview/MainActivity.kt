@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import valentyn.vcmusicplayer.R
 import androidx.core.app.ActivityCompat
-import androidx.viewpager.widget.ViewPager
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,13 +19,15 @@ class MainActivity : AppCompatActivity() {
 
         media_pager.apply {
             adapter = MediaPager(supportFragmentManager)
-            addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+
+           /* addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
                 override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
                 override fun onPageSelected(position: Int) {
                     bottomBar.selectTabAtPosition(position, true)
                 }
                 override fun onPageScrollStateChanged(state: Int) {}
-            })
+            }) */
+
         }
 
         bottomBar.setOnTabSelectListener { tabId ->

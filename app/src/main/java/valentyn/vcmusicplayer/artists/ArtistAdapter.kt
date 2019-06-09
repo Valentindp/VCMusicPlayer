@@ -10,11 +10,12 @@ import valentyn.vcmusicplayer.R
 import valentyn.vcmusicplayer.models.Artist
 import valentyn.vcmusicplayer.utils.PlayerUtils
 
-class ArtistAdapter(var list: List<Artist>) : RecyclerView.Adapter<ArtistAdapter.ItemHolder>() {
+class ArtistAdapter(var list: List<Artist>, val horizontal: Boolean = false) :
+    RecyclerView.Adapter<ArtistAdapter.ItemHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ItemHolder(
         LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_artist_list, parent, false)
+            .inflate(if (horizontal) R.layout.item_artist_list_horizontal else R.layout.item_artist_list, parent, false)
     )
 
     override fun getItemCount() = list.size
@@ -39,7 +40,8 @@ class ArtistAdapter(var list: List<Artist>) : RecyclerView.Adapter<ArtistAdapter
 
             view.apply {
                 artist_card_title.text = item.name
-                artist_songs_count.text = context.getString(R.string.artist_songs_count, item.albumCount, item.songCount)
+                artist_songs_count.text =
+                    context.getString(R.string.artist_songs_count, item.albumCount, item.songCount)
             }
 
         }

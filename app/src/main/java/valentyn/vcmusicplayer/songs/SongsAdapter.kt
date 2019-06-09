@@ -10,11 +10,11 @@ import valentyn.vcmusicplayer.R
 import valentyn.vcmusicplayer.models.Song
 import valentyn.vcmusicplayer.utils.PlayerUtils
 
-class SongsAdapter(var list: List<Song>) : RecyclerView.Adapter<SongsAdapter.ItemHolder>() {
+class SongsAdapter(var list: List<Song>, val horizontal : Boolean = false) : RecyclerView.Adapter<SongsAdapter.ItemHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ItemHolder(
         LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_song_list, parent, false)
+            .inflate(if (horizontal) R.layout.item_song_list_horizontal else R.layout.item_song_list, parent, false)
     )
 
     override fun getItemCount() = list.size

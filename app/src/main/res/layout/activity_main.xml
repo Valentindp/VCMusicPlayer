@@ -7,12 +7,12 @@
         android:layout_height="match_parent"
         tools:context=".mainview.MainActivity">
 
-    <androidx.viewpager.widget.ViewPager
+    <valentyn.vcmusicplayer.utils.SwipeLockableViewPager
             android:id="@+id/media_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/bottomBar">
-    </androidx.viewpager.widget.ViewPager>
+    </valentyn.vcmusicplayer.utils.SwipeLockableViewPager>
 
     <com.roughike.bottombar.BottomBar
             android:id="@+id/bottomBar"

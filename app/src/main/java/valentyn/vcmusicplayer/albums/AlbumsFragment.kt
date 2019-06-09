@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import kotlinx.android.synthetic.main.fragment_album.*
 import valentyn.vcmusicplayer.R
-import androidx.recyclerview.widget.GridLayoutManager
 import valentyn.vcmusicplayer.data.dataloaders.AlbumLoader
 import valentyn.vcmusicplayer.utils.CardViewItemDecoration
 

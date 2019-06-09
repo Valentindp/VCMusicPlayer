@@ -16,20 +16,19 @@ import valentyn.vcmusicplayer.data.dataloaders.SongLoader
 
 import valentyn.vcmusicplayer.songs.SongsAdapter
 
-class AllMediaCollectionsAdapter(val context: Context, var list: List<Int>) :
+class AllMediaCollectionsAdapter(val context: Context) :
     RecyclerView.Adapter<AllMediaCollectionsAdapter.ItemHolder>() {
+
+    private val list = listOf(R.id.songs_tab,  R.id.albums_tab, R.id.artists_tab)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemHolder {
 
         val viewItemMedia = LayoutInflater.from(parent.context).inflate(R.layout.item_all_media, parent, false)
 
-        // use a linear layout manager
-        val layoutMan = LinearLayoutManager(context)
-        layoutMan.orientation = LinearLayoutManager.HORIZONTAL
-
         viewItemMedia.allMedia_recyclerViewHorizontal.apply {
             setHasFixedSize(false)
             isHorizontalScrollBarEnabled = true
-            layoutManager = layoutMan
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         }
 
         return ItemHolder(context, viewItemMedia)
@@ -47,20 +46,16 @@ class AllMediaCollectionsAdapter(val context: Context, var list: List<Int>) :
         fun bindData(item: Int) {
             when (item) {
                 R.id.songs_tab -> {
-                    val songsAdapter = SongsAdapter(SongLoader.getAllSongs(context))
-                    view.allMedia_recyclerViewHorizontal.adapter = songsAdapter
-                    view.collection_media_title.text = context.getString(R.string.songs_count, songsAdapter.list.size)
+                    view.allMedia_recyclerViewHorizontal.adapter = SongsAdapter(SongLoader.getAllSongs(context), true)
+                    view.collection_media_title.text = context.getString(R.string.tab_song_title)
                 }
                 R.id.albums_tab -> {
-                    val albumsAdapter = AlbumAdapter(AlbumLoader.getAllAlbums(context))
-                    view.allMedia_recyclerViewHorizontal.adapter = albumsAdapter
-                    view.collection_media_title.text = context.getString(R.string.albums_count, albumsAdapter.list.size)
+                    view.allMedia_recyclerViewHorizontal.adapter = AlbumAdapter(AlbumLoader.getAllAlbums(context), true)
+                    view.collection_media_title.text = context.getString(R.string.tab_album_title)
                 }
                 R.id.artists_tab -> {
-                    val artistAdapter = ArtistAdapter(ArtistLoader.getAllArtists(context))
-                    view.allMedia_recyclerViewHorizontal.adapter = artistAdapter
-                    view.collection_media_title.text =
-                        context.getString(R.string.artists_count, artistAdapter.list.size)
+                    view.allMedia_recyclerViewHorizontal.adapter = ArtistAdapter(ArtistLoader.getAllArtists(context), true)
+                    view.collection_media_title.text = context.getString(R.string.tab_artist_title)
                 }
             }
         }

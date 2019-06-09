@@ -10,4 +10,6 @@
     <dimen name="cardViewElevation">3dp</dimen>
     <dimen name="cardViewCornerRadius">10dp</dimen>
     <dimen name="cardViewTextMarginTop">10dp</dimen>
+    <dimen name="layoutWidthCardHorizontal">180dp</dimen>
+    <dimen name="layoutHeightCardHorizontal">220dp</dimen>
 </resources>
